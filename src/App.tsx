@@ -1,11 +1,22 @@
+import { Link, Route, Routes } from "react-router";
 import "./App.css";
-import { Input } from "./components";
+import Home from "./pages/home";
+import Login from "./pages/login";
+import Register from "./pages/register";
 
 function App() {
   return (
     <>
-      <h2>Typescript React hook form library</h2>
-      <Input />
+      <nav>
+        <Link to={"/"}>Home</Link>
+        <Link to={"/login"}>Login</Link>
+        <Link to={"/register"}>Register</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
     </>
   );
 }
